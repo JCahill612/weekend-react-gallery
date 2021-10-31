@@ -1,3 +1,8 @@
+body{
+    background-color: lightblue;
+    font-family: fantasy;
+}
+
 .container{
 
     display: flex;
@@ -15,9 +20,11 @@
 }
 
 .numOfLikes{
-    text-align: center;
+    margin-left: 25px;
 }
 
-.btn{
-    margin:0px;
+.countbutton{
+    margin-left: 20px;
+    max-width: 200px;
+    width: 180px;
 }

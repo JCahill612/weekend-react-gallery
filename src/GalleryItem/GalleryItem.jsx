@@ -63,8 +63,7 @@ function GalleryItem( props ) {
                 }
                 </div>
             <div class="likes">
-                <p></p>
-                <button class="countbutton w3-left-align" onClick={() => increaseCount()}>&#128077; Like </button>
+                <button class="countbutton" onClick={() => increaseCount()}>&#128077; Like </button>
                 <p class="numOfLikes">{getLikes()}</p>
 
             </div>
