@@ -23,12 +23,11 @@ function GalleryItem( props ) {
         setShow( !show );
     }
 
-    //increase the number of likes by 1 each time a user clicks on the like button
+    //increase the number of likes by 1
     const increaseCount = ( )=>{
         setItem( {
             ...item, likes: ++item.likes 
         })
-        //make a call to server via axios
         updatePhotoLikes();
     }
 
@@ -57,17 +56,15 @@ function GalleryItem( props ) {
   
     return (
         <div>
-            <div className="container">
+            <div class="container">
                 { show ?
                     <img src={item.path} onClick={toggleItem} height="200" width="200" ></img> :
                     <p id="description" onClick={toggleItem}>{item.description}</p>
                 }
             </div>
-            <div className="container">
                 <button className="countButton" class="btn btn-outline-dark" onClick={() => increaseCount()}>&#128077; Like </button>
                 <p className="countLikes">{getLikes()}</p>
-            </div>
-        </div>
+                </div>
         )    
 }
 
