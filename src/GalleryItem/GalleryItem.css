@@ -1,36 +1,10 @@
-
-/* .itemLikes {
-    margin-top: 15px;
-    max-width: 400px;
-}
-.countButton {
-    margin-bottom: 15px;
-} */
 .container{
     margin-top: 20px;
     margin: auto;
     display: inline;
+    padding:5px;
     /* display: grid;
     grid: 150px / auto auto auto; */
     float: left;
     width: 180px;
-    /* padding: 10px;
-    margin: 20px;
-    margin-bottom: 5px;
-    width: 10rem;  */
 }
-
-/* img {
-    display: grid;
-    grid: 150px / auto auto auto;
-} */
-/* #description {
-    font-size: 18px;
-    max-width: 200px;
-    min-height: 200px;
-    padding-top: 50px;
-}
-
-.countText {
-    margin-top: 10px;
-}  */
