@@ -61,10 +61,15 @@ function GalleryItem( props ) {
                     <img src={item.path} onClick={toggleItem} height="200" width="200" ></img> :
                     <p id="description" onClick={toggleItem}>{item.description}</p>
                 }
-            </div>
-                <button className="countButton" class="btn btn-outline-dark" onClick={() => increaseCount()}>&#128077; Like </button>
-                <p className="countLikes">{getLikes()}</p>
                 </div>
+            <div class="likes">
+                <p></p>
+                <button class="countbutton w3-left-align" onClick={() => increaseCount()}>&#128077; Like </button>
+                <p class="numOfLikes">{getLikes()}</p>
+
+            </div>
+            </div>
+
         )    
 }
 
