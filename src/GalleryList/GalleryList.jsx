@@ -2,8 +2,7 @@ import React from 'react';
 import './GalleryList.css';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
-//loop through each individual item in galleryItems array and pass it to the GalleryItem component 
-//for further processing/rendering
+//loop through each individual item in galleryItems then pass to GalleryItems
 function GalleryList( props ) {
     return (
         <div>

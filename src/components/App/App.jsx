@@ -11,10 +11,10 @@ function App() {
   useEffect( ()=>{
       console.log('Component loaded');
       getItems();
-  }, []); //<-- SUPER IMPORTANT to put this empty array in here.
+  }, []); 
 
 
-  //get the items from the server using axios middleware call
+  //get the items from the server 
   const getItems=()=>{
     axios.get( '/gallery' ).then( ( response )=>{
       setGalleryItems( response.data );
@@ -25,7 +25,6 @@ function App() {
     })
   }
 
-    //pass the array of items to the Body component for further processing/rendering
     return (
       <div className="App">
         <header className="App-header">
