@@ -8,7 +8,6 @@ function GalleryItem( props ) {
     const oneLike = ` person "Likes" this!`;
     const manyLikes = ` people "Like" this!`;
 
-    //when the item is rendered on the screen it should be created with it's properties from the server
     const [ item, setItem ] = useState ( {
         id: props.item.id,
         path: props.item.path,
@@ -19,12 +18,12 @@ function GalleryItem( props ) {
     //set the 'show' state of the image or description
     const[show, setShow] = useState(  true );   
 
-    //show or hide the image/desription depending on the value of show
+    //set the 'toggle' function
     const toggleItem = () => {
         setShow( !show );
     }
 
-    //increase the number of loves by 1 each time a user clicks on the loves button
+    //increase the number of likes by 1 each time a user clicks on the like button
     const increaseCount = ( )=>{
         setItem( {
             ...item, likes: ++item.likes 
@@ -33,8 +32,7 @@ function GalleryItem( props ) {
         updatePhotoLikes();
     }
 
-    //update (PUT) the likes value for this item on the server
-    //use axios as middleware to the server
+    //update (PUT) 
     const updatePhotoLikes = ( ) =>{
         axios.put( `/gallery/like/${item.id}`, item ).then( ( response )=>{
             console.log( response.data );
@@ -44,8 +42,8 @@ function GalleryItem( props ) {
         });
     }    
 
-    //determine the text to show on the screen - depends on how many people love the image
-    const getCountText = ()=>{
+    //for the text on the dom the user sees
+    const getLikes = ()=>{
         let text = noLikes;
         if( item.likes !== 0 ) {
             if( item.likes === 1 ) {
@@ -61,13 +59,13 @@ function GalleryItem( props ) {
         <div>
             <div className="container">
                 { show ?
-                    <img src={item.path} onClick={toggleItem} height="200" width="200"class="img-fluid img-thumbnail shadow"></img> :
+                    <img src={item.path} onClick={toggleItem} height="200" width="200" ></img> :
                     <p id="description" onClick={toggleItem}>{item.description}</p>
                 }
             </div>
             <div className="container">
-                <button className="countButton" class="btn btn-outline-dark" onClick={() => increaseCount()}>&hearts; Like </button>
-                <p className="countText">{getCountText()}</p>
+                <button className="countButton" class="btn btn-outline-dark" onClick={() => increaseCount()}>&#128077; Like </button>
+                <p className="countLikes">{getLikes()}</p>
             </div>
         </div>
         )    
